@@ -1,6 +1,6 @@
 import item from './pages/item.js';
 import container from './pages/container.js';
-import camera, {startCamera, stopCamera} from './pages/camera.js';
+import camera, { startCamera, stopCamera } from './pages/camera.js';
 
 const routes = {
     '/item': item,
@@ -14,7 +14,7 @@ let currentPath = null;
 export default async function router() {
     const path = window.location.pathname;
     const page = routes[path] || item;
-    
+
     if (page) {
         if (currentPath === '/camera' && path !== '/camera') {
             await stopCamera();
